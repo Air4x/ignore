@@ -28,7 +28,7 @@ when isMainModule:
   var to_ignore: seq[string] = newSeqOfCap[string](10)
   const ignore_file_path: string = ".orgzlyignore"
   var ignore_file: File
-  discard ignore_file.open(ignore_file_path)
+  discard ignore_file.open(ignore_file_path, fmWrite)
 
   for file in walkFiles("*.org"):
     tag_line = tags(file)
